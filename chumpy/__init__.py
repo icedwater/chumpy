@@ -25,8 +25,8 @@ import chumpy as ch
 
 [x1, x2, x3] = ch.array(10), ch.array(20), ch.array(30)
 result = x1+x2+x3
-print result # prints [ 60.]
-print result.dr_wrt(x1) # prints 1
+print(result) # prints [ 60.]
+print(result.dr_wrt(x1)) # prints 1
 """
 
 demos['show_tree'] = """
@@ -48,8 +48,8 @@ import chumpy as ch
 
 x1, x2, x3, x4 = ch.eye(10), ch.array(1), ch.array(5), ch.array(10)
 y = x1*(x2-x3)+x4
-print y
-print y.dr_wrt(x2)
+print(y)
+print(y.dr_wrt(x2))
 """
 
 demos['linalg'] = """
@@ -57,8 +57,8 @@ import chumpy as ch
 
 m = [ch.random.randn(100).reshape((10,10)) for i in range(3)]
 y = m[0].dot(m[1]).dot(ch.linalg.inv(m[2])) * ch.linalg.det(m[0])
-print y.shape
-print y.dr_wrt(m[0]).shape
+print(y.shape)
+print(y.dr_wrt(m[0]).shape)
 """
 
 demos['inheritance'] = """
@@ -80,8 +80,8 @@ class Sin(ch.Ch):
 
 x1 = Ch([10,20,30])
 result = Sin(x1) # or "result = Sin(x=x1)"
-print result.r
-print result.dr_wrt(x1)
+print(result.r)
+print(result.dr_wrt(x1))
 """
 
 demos['optimization'] = """
@@ -97,8 +97,8 @@ e3 = 2.625 - x + x*(y**3)
 
 objective = {'e1': e1, 'e2': e2, 'e3': e3}
 ch.minimize(objective, x0=[x,y], method='dogleg')
-print x # should be all 3.0
-print y # should be all 0.5
+print(x) # should be all 3.0
+print(y) # should be all 0.5
 """
 
 
